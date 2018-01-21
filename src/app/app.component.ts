@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AppService} from "./app.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+
+  // 이름
+  public name : string = '';
+
   title = 'app';
+
+
+  constructor(private appService : AppService) {
+
+  }
+
+
 }
