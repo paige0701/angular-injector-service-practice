@@ -8,13 +8,6 @@ import {AppService} from "./app.service";
 })
 export class AppComponent {
 
-
-  // 이름
-  public name : string = '';
-
-  title = 'app';
-
-
   constructor(private appService : AppService) {
 
   }

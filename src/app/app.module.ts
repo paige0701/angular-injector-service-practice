@@ -6,8 +6,15 @@ import {AppService} from "./app.service";
 import {CommonModule} from "@angular/common";
 import {EditComponent} from "./edit.component";
 import {HomeComponent} from "./home.component";
-import {RouterModule} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import {FormsModule} from "@angular/forms";
+
+const appRoutes: Routes = [
+  { path: 'home', component : HomeComponent },
+  { path: 'edit', component: EditComponent }
+];
+
+
 
 @NgModule({
   declarations: [
@@ -19,7 +26,7 @@ import {FormsModule} from "@angular/forms";
     BrowserModule,
     CommonModule,
     FormsModule,
-    RouterModule.forRoot( [{ path: 'edit', component : EditComponent}])
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [AppService],
   bootstrap: [AppComponent]

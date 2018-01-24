@@ -8,8 +8,6 @@ import {AppService} from "./app.service";
 })
 export class HomeComponent {
 
-
-
   constructor(private appService : AppService) {
 
   }
