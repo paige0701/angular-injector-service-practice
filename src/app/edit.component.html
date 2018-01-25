@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="form-group">
     <label for="usr">Name:</label>
-    <input style="width : 50%" class="form-control" id="usr" [(ngModel)]="editName" placeholder="{{ appService.name }}" (keyup.enter)="updateName()" />
+    <input style="width : 50%" class="form-control" id="usr" [(ngModel)]="editName" (keyup.enter)="updateName()" value="{{appService.name }}" />
     <button type="button" class="btn btn-primary" (click)="updateName()">Edit</button>
   </div>
 </div>

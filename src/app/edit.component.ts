@@ -21,6 +21,13 @@ export class EditComponent {
   }
 
   public updateName() : void {
+
+    if (this.editName === '' || this.editName.trim() === '') {
+      alert('how dare you test me !!');
+      this.editName = this.editName.trim();
+      return;
+    }
+
     this.appService.name = this.editName;
     this.router.navigate(['/home']);
   }
