@@ -1,4 +1,15 @@
-<div class="container-fluid">Welcome {{ appService.name }}.
+<div class="container-fluid">
+
+  <h3>Welcome {{ appService.name }}.</h3>
+  <hr/>
+
+  <ul>
+    <li *ngFor="let cafe of cafeLists">
+      {{ cafe.Name | json }}
+    </li>
+  </ul>
 </div>
+
+
 
 

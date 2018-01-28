@@ -8,6 +8,9 @@ import {EditComponent} from "./edit.component";
 import {HomeComponent} from "./home.component";
 import {RouterModule, Routes} from "@angular/router";
 import {FormsModule} from "@angular/forms";
+import {CommonService} from "./common/common.service";
+import {HttpModule} from "@angular/http";
+import {HttpClientModule} from "@angular/common/http";
 
 const appRoutes: Routes = [
   { path: 'home', component : HomeComponent },
@@ -25,10 +28,14 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     CommonModule,
+    HttpModule, HttpClientModule,
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [AppService],
+  exports : [
+
+  ],
+  providers: [AppService, CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
