@@ -24,4 +24,10 @@ export class CommonService {
     return this.get(url);
   }
 
+  public getRestaurantLists()  {
+
+    const url = 'http://localhost:4200/assets/restaurantLists.json';
+    return this.get(url);
+  }
+
 }

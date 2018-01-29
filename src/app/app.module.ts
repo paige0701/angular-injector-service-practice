@@ -10,10 +10,13 @@ import {RouterModule, Routes} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {CommonService} from "./common/common.service";
 import {HttpModule} from "@angular/http";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {CommonInterceptor} from "./common/common.interceptor";
+import {CafeComponent} from "./cafe.component";
 
 const appRoutes: Routes = [
   { path: 'home', component : HomeComponent },
+  { path: 'cafe', component : CafeComponent },
   { path: 'edit', component: EditComponent }
 ];
 
@@ -23,7 +26,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     EditComponent,
-    HomeComponent
+    HomeComponent,
+    CafeComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,11 @@ const appRoutes: Routes = [
   exports : [
 
   ],
-  providers: [AppService, CommonService],
+  providers: [AppService, CommonService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: CommonInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
